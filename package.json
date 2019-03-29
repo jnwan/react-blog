@@ -2,6 +2,7 @@
   "name": "react-blog",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://jnwan.github.io/react-blog",
   "dependencies": {
     "@types/jest": "23.3.12",
     "@types/node": "10.12.18",
@@ -9,6 +10,7 @@
     "@types/react-dom": "16.8.0",
     "blueimp-md5": "2.3.0",
     "feed": "2.0.2",
+    "gh-pages": "^2.0.1",
     "import-all.macro": "2.0.3",
     "lodash": "4.17.11",
     "navi": "^0.12.0",
@@ -26,12 +28,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && ts-node -O {\\\"module\\\":\\\"commonjs\\\"} node_modules/navi-scripts/bin/navi-scripts.js build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "serve": "navi-scripts serve",
-    "deploy": "netlify deploy --dir=build",
-    "deploy:prod": "netlify deploy --dir=build --prod"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
